@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import './Homepage.css';
 import { getMoviesByName } from '../../services/titles/titles';
+import './Homepage.scss';
 
 function Homepage() {
   //const filter = "";
@@ -36,8 +36,8 @@ console.log(movies)
 
 
   return (
-    <div className="body">
-    <form onSubmit={handleSubmit}>
+    <div className="Homepage">
+      <form onSubmit={handleSubmit}>
       <div className="input">
         <label>
           Recherche par Nom de film
