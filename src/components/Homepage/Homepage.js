@@ -1,5 +1,3 @@
-import classnames from 'classnames';
-
 import './Homepage.css';
 
 function Homepage(props) {
