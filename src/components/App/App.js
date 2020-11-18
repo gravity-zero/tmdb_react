@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Switch} from 'react-router-dom';
 
 import Homepage from '../Homepage/Homepage'
+import Movies from '../Movies/Movies'
 
 
 function App() {
@@ -11,7 +12,12 @@ function App() {
             exact
             path="/"
             component={Homepage}
-          />    
+          />
+          <Route
+            exact
+            path="/test"
+            component={Movies}
+          />
         </Switch>
     </BrowserRouter>
   );
