@@ -8,15 +8,18 @@ function Homepage() {
      title: '' 
     });
 
-  function handleSubmit(event) {
-    event.preventDefault();
+  function handleChange(event) {
     setValue({
       ...value,
       [event.target.name]: event.target.value
-    
-    });
+      });
+    }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    console.log(value.title);
   }
-  console.log(value);
+
   return (
     <form onSubmit={handleSubmit}>
     <div className="body">
@@ -28,8 +31,9 @@ function Homepage() {
         id="title" 
         name="title" 
         value={value.title}
+        onChange={handleChange}
         />
-        <input type="submit" onSubmit={handleSubmit} />
+        <input type="submit" />
         </label>
       </div>
     </div>
