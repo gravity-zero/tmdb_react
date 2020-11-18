@@ -1,6 +1,6 @@
 import './Homepage.css';
 
-function Homepage(props) {
+function Homepage() {
   const filter = "";
 
   return (
@@ -12,3 +12,5 @@ function Homepage(props) {
     </div>
   )
 }
+
+export default Homepage;
