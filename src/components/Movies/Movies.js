@@ -7,20 +7,28 @@ function Homepage(props) {
 
   const [movies, setMovies] = useState({
     total_results: '',
-    results: ''
+    results: []
   });
+  
 
   useEffect(() => {
     if (name) {
-        getMoviesByName(name).then(data => setMovies(data));
-        console.log(name)
+        getMoviesByName(name)
+        .then(data => {
+            setMovies(data)            
+        })
     }
-  }, [name]);
-  
+}, [name]);
+
+console.log(movies)
+
   return (
     <div className="Movies">
-        <h1>Hello world</h1>
+        <h1>Total de résultat: {movies.total_results}</h1>
         <ul>
+        { movies.results.map((movie) =>
+            <li value={movie.id}>{movie.title}</li>
+        )}
         </ul>
     </div>
   )
