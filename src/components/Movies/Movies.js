@@ -14,7 +14,6 @@ function Homepage(props) {
     if (name) {
         getMoviesByName(name).then(data => setMovies(data));
         console.log(name)
-
     }
   }, [name]);
   
