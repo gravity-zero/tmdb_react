@@ -22,18 +22,13 @@ function Homepage(props) {
   
 
   return (
-    <BrowserRouter>
     <div className="Homepage">
-      <Header/> 
-          <h1>Total de résultat: {object.results.length}</h1>
       <div className="Cards">
           { object.results.map((movie) =>
             <Card movie={movie} key={movie.id}/> 
           )}
       </div>
     </div>
-    </BrowserRouter>
-
   )
 }
 
