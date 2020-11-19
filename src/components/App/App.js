@@ -7,6 +7,7 @@ import Movies from '../Movies/Movies';
 import { getMoviesByName } from '../../services/titles/titles';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
+import Searchbar from '../Searchbar/Searchbar';
 
 function App() {
 
@@ -37,16 +38,18 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Header 
-      handleChange={handleChange}
-      handleSubmit={handleSubmit}
-      value={value.title}
-      /> 
+      <Header /> 
+      <Searchbar 
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+        value={value.title}
+      />
         <Switch>
           <Route
             exact
             path="/"
-          ><Homepage movies={movies} />
+          >
+            <Homepage movies={movies} />
           </Route>
           <Route
             exact
