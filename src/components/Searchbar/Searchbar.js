@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useHistory, useRouteMatch } from 'react-router-dom'
 import { getMoviesByName } from '../../services/titles/titles';
 
+
 function Searchbar(props) {
 
   const history = useHistory();
@@ -41,8 +42,12 @@ function Searchbar(props) {
         onChange={props.handleChange}
         />
         </label>
+        <select onChange={props.changeLang} value={props.lang} className="select-lang">
+          <option value="fr" defaultValue>FR</option>
+          <option value="en">EN</option>
+        </select>
       </div>
-    </form>
+      </form>
     </div>
   );
 }
