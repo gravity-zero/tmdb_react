@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import './Movies.css';
+import './Movies.scss';
 import { getMoviesByName } from '../../services/titles/titles';
+import Header from '../Header/Header';
+import { BrowserRouter} from 'react-router-dom';
 
 function Homepage(props) {
   const name = "spider";
@@ -23,14 +25,17 @@ function Homepage(props) {
 console.log(movies)
 
   return (
-    <div className="Movies">
+    <BrowserRouter>
+      <div className="Movies">
+        <Header/> 
         <h1>Total de résultat: {movies.total_results}</h1>
         <ul>
-        { movies.results.map((movie) =>
-            <li value={movie.id}>{movie.title}</li>
-        )}
+          { movies.results.map((movie) =>
+              <li value={movie.id}>{movie.title}</li>
+          )}
         </ul>
-    </div>
+      </div>
+    </BrowserRouter>
   )
 }
 

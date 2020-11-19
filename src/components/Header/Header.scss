@@ -1,5 +1,5 @@
 .Header {
-    background-color: #2B2929;
+    background-color: none;
     min-height: 5vh;
     display: flex;
     flex-direction: row;
@@ -7,12 +7,28 @@
     justify-content: space-between;
     font-size: calc(10px + 2vmin);
     color: rgb(110, 110, 110);
-    padding: 5px 20px;
     &-logo {
+        margin: 10px 40px;
         width: 40px;
         height: 40px;
         background-image: url(https://upload.wikimedia.org/wikipedia/commons/a/ab/Android_O_Preview_Logo.png);
         background-size: contain;
         background-repeat: no-repeat;
+    }
+    & input {
+        &:focus {
+            border: none;
+            outline: none;
+            border-bottom: 1px solid white;
+            padding: 0 10px;
+        }
+        margin: 10px 40px;
+        border: none;
+        background: none;
+        color: white;
+        font-size: 30px;
+        border-bottom: 1px solid white;
+        padding: 0 10px;
+
     }
   }
