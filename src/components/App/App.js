@@ -1,11 +1,10 @@
-import { BrowserRouter, Route, Switch} from 'react-router-dom';
+import { BrowserRouter, Route, Switch, useRouteMatch } from 'react-router-dom';
 import { useState} from 'react';
-
-
 import  Homepage  from '../Homepage/Homepage';
 import Movies from '../Movies/Movies';
 import { getMoviesByName } from '../../services/titles/titles';
 import Header from '../Header/Header';
+import Details from '../Details/Details'
 import Footer from '../Footer/Footer';
 
 function App() {
@@ -35,6 +34,7 @@ function App() {
   }
 
 
+
   return (
     <BrowserRouter>
       <Header 
@@ -46,13 +46,19 @@ function App() {
           <Route
             exact
             path="/"
-          ><Homepage movies={movies} />
-          </Route>
+            render={() => <Homepage movies={movies} />}
+          />
           <Route
             exact
             path="/test"
             component={Movies}
           />
+          <Route
+            exact
+            path="/details/:id"
+            component={Details}
+          />
+          
         </Switch>
         <Footer/>
     </BrowserRouter>

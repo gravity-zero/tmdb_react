@@ -1,9 +1,12 @@
-import { Link } from 'react-router-dom';
+import { Link, useRouteMatch } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import './Header.scss';
 
 function Header(props) {
+
+  let match = useRouteMatch("/details/:id");
+
 
   return (
     <div className="Header">
