@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { getMoviesByName } from '../../services/titles/titles';
 import './Homepage.scss';
+import Header from '../Header/Header';
+import { BrowserRouter, Route, Switch} from 'react-router-dom';
 
 function Homepage() {
   //const filter = "";
@@ -36,31 +38,36 @@ console.log(movies)
 
 
   return (
-    <div className="Homepage">
-      <form onSubmit={handleSubmit}>
-      <div className="input">
-        <label>
-          Recherche par Nom de film
-        <input 
-        type="text" 
-        id="title" 
-        name="title" 
-        value={value.title}
-        onChange={handleChange}
-        />
-        <input type="submit" />
-        </label>
+    <BrowserRouter>
+      <div className="Homepage">
+        <Header/> 
+
+        <form onSubmit={handleSubmit}>
+          <div className="input">
+            <label>
+              Recherche par Nom de film
+              <input 
+                type="text" 
+                id="title" 
+                name="title" 
+                value={value.title}
+                onChange={handleChange}
+                />
+              <input type="submit" />
+            </label>
+          </div>
+        </form>
+        <div className="Movies">
+          <h1>Total de résultat: {movies.results.length}</h1>
+          <ul>
+            { movies.results.map((movie) =>
+                <li value={movie.id}>{movie.title}</li>
+            )}
+          </ul>
+        </div>
       </div>
-    </form>
-    <div className="Movies">
-        <h1>Total de résultat: {movies.results.length}</h1>
-        <ul>
-        { movies.results.map((movie) =>
-            <li value={movie.id}>{movie.title}</li>
-        )}
-        </ul>
-    </div>
-    </div>
+    </BrowserRouter>
+
   )
 }
 

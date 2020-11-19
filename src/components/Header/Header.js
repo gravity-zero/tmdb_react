@@ -9,13 +9,15 @@ function Header() {
         <Link to="/">
             <div className="Header-logo"></div>
         </Link>
-        <input
-            name="title"
-            type="text"
-            // value={movie.title}
-            // onChange={handleChange}
-            placeholder="Recherche... Avengers, La r.."
-        />
+        <div className="Header-input">       
+          <input
+              name="title"
+              type="text"
+              // value={movie.title}
+              // onChange={handleChange}
+              placeholder="Recherche... Avengers, La r.."
+          />
+        </div>
     </div>
   );
 }
