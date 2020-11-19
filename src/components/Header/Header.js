@@ -2,20 +2,27 @@ import { Link } from 'react-router-dom';
 
 import './Header.scss';
 
-function Header() {
+function Header(props) {
 
   return (
     <div className="Header">
         <Link to="/">
             <div className="Header-logo"></div>
         </Link>
-        <input
-            name="title"
-            type="text"
-            // value={movie.title}
-            // onChange={handleChange}
-            placeholder="Recherche... Avengers, La r.."
+        <form onSubmit={props.handleSubmit}>
+      <div className="input">
+        <label>
+        <input 
+        type="text" 
+        id="title" 
+        name="title" 
+        placeholder="Recherche... Avengers, La r.."
+        value={props.value}
+        onChange={props.handleChange}
         />
+        </label>
+      </div>
+    </form>
     </div>
   );
 }
