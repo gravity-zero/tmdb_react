@@ -18,9 +18,7 @@ function Homepage(props) {
     if(props.movies !== undefined){
     setObject(props.movies);
   }
-  }, 
-  [ props.movies ]
-  )
+  },[ props.movies ])
 
   return (
     <div className="Homepage">

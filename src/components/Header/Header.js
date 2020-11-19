@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import SearchBar from '../Searchbar/Searchbar';
 import './Header.scss';
 
 function Header(props) {
@@ -11,18 +12,10 @@ function Header(props) {
             <div className="Header-logo"></div>
         </Link>
       <div className="Header-input">
-        <form onSubmit={props.handleSubmit}>
-        <label>
-          <input 
-            type="text" 
-            id="title" 
-            name="title" 
-            placeholder="Recherche... Avengers, La r.."
-            value={props.value}
-            onChange={props.handleChange}
-          />
-          </label>
-        </form>
+        <SearchBar value={props.value} 
+          handleChange={props.handleChange}
+          setMovies={props.setMovies}
+        />
       </div>
     </div>
   );
