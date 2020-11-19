@@ -19,7 +19,7 @@ export function getMovieById(id)
 {
     const api_key = "497f09650e99d4bcfc441563baefcceb";
 
-    return fetch(`https://api.themoviedb.org/3/find/${id}?api_key=${api_key}`)
+    return fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${api_key}`)
     .then(response => response.json());
         
 }
