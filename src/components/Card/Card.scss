@@ -38,7 +38,7 @@
             }
         }
         &-info {
-            transition: all 1s;
+            transition: all 0.2s;
             position: absolute;
             width: 100%;
             height: 20%;
@@ -49,15 +49,17 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             @include md {
                 width: 100%;
                 height: 20%;
-                &:hover {
+                &:hover, &:focus {
                     height: 100%;
+                    justify-content: center;
                 }
             }
-
+            text-align: center;
+            overflow: hidden;
         }
     }
 }

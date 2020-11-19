@@ -22,7 +22,7 @@ function Homepage(props) {
     }
 }, [name]);
 
-console.log(movies)
+// console.log(movies)
 
   return (
     <BrowserRouter>

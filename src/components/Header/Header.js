@@ -10,20 +10,20 @@ function Header(props) {
         <Link to="/">
             <div className="Header-logo"></div>
         </Link>
+      <div className="Header-input">
         <form onSubmit={props.handleSubmit}>
-      <div className="input">
         <label>
-        <input 
-        type="text" 
-        id="title" 
-        name="title" 
-        placeholder="Recherche... Avengers, La r.."
-        value={props.value}
-        onChange={props.handleChange}
-        />
-        </label>
+          <input 
+            type="text" 
+            id="title" 
+            name="title" 
+            placeholder="Recherche... Avengers, La r.."
+            value={props.value}
+            onChange={props.handleChange}
+          />
+          </label>
+        </form>
       </div>
-    </form>
     </div>
   );
 }
