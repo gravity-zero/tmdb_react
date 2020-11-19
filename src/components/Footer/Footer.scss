@@ -1,0 +1,19 @@
+
+.Footer {
+    position:fixed;
+    z-index: 1000;
+    bottom:0;
+    width:100%;
+    min-height: 5vh;
+    background-color: #191919;
+    padding: 5px 20px;
+    color: rgb(192, 192, 192);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & a{
+        text-decoration: none;
+        color: #5d5d5d;
+    }
+}
+  
