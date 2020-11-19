@@ -1,18 +1,48 @@
+@import '../SCSS/media';
+
 .Header {
-    background-color: #2B2929;
+    background-color: none;
     min-height: 5vh;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     font-size: calc(10px + 2vmin);
-    color: rgb(110, 110, 110);
-    padding: 5px 20px;
     &-logo {
+        margin: 10px 40px;
         width: 40px;
         height: 40px;
         background-image: url(https://upload.wikimedia.org/wikipedia/commons/a/ab/Android_O_Preview_Logo.png);
         background-size: contain;
         background-repeat: no-repeat;
+    }
+    & input {
+        &:focus {
+            border: none;
+            outline: none;
+            border-bottom: 1px solid white;
+            padding: 0 10px;
+            margin: 10px 10px 10px 0;
+            & + label {display: none;}
+        }
+        width: 200px !important;
+        font-size: 20px;
+        @include sm {
+            width: 385px;
+            font-size: 30px;
+
+        }
+        margin: 10px 0;
+        border: none;
+        background: none;
+        color: rgb(200, 200, 200);
+        border-bottom: 1px solid white;
+        padding: 0 10px;
+
+    }
+    & label {
+        margin-right: 10px;
+        color: rgb(124, 124, 124);
+        font-size: 30px;
     }
   }
