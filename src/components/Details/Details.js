@@ -15,14 +15,13 @@ function Details(props) {
         getMovieById(props.match.params.id)
         .then(data => {
             setMovie(data)
-          })
+        })
     },[props.match.params.id])
 
     let img = i;
     if (null !== movie.poster_path) {
         img = 'https://image.tmdb.org/t/p/original/'+movie.poster_path;
     }
-console.log(movie)
   return (
     // <div className="Details">
     //     <div>

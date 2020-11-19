@@ -1,8 +1,7 @@
-import { BrowserRouter, Route, Switch, useRouteMatch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, useHistory } from 'react-router-dom';
 import { useState} from 'react';
 import  Homepage  from '../Homepage/Homepage';
 import Movies from '../Movies/Movies';
-import { getMoviesByName } from '../../services/titles/titles';
 import Header from '../Header/Header';
 import Details from '../Details/Details'
 import Footer from '../Footer/Footer';
@@ -25,24 +24,16 @@ function App() {
       [event.target.name]: event.target.value
       });
     }
-
-  function handleSubmit(event) {
-    event.preventDefault();
-    getMoviesByName(value.title)
-        .then(data => {
-            setMovies(data)
-        })
-  }
-
-
+  
+    console.log(value)
 
   return (
     <BrowserRouter>
       <Header 
         handleChange={handleChange}
-        handleSubmit={handleSubmit}
         value={value.title}
-      /> 
+        setMovies={setMovies}
+      />
         <Switch>
           <Route
             exact
@@ -59,7 +50,6 @@ function App() {
             path="/details/:id"
             component={Details}
           />
-          
         </Switch>
         <Footer/>
     </BrowserRouter>
