@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
 import { getMoviesByName } from '../../services/titles/titles';
 import './Homepage.scss';
 import Header from '../Header/Header';
-import { BrowserRouter, Route, Switch} from 'react-router-dom';
+import { BrowserRouter} from 'react-router-dom';
 
 function Homepage() {
   //const filter = "";
