@@ -16,7 +16,7 @@ function App() {
           />
           <Route
             exact
-            path="/test?=`${id}`"
+            path="/test"
             component={Movies}
           />
         </Switch>
