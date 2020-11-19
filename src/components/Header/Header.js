@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import './Header.scss';
 
-function Header(props) {
+function Header() {
 
   let match = useRouteMatch("/details/:id");
 
@@ -13,20 +13,7 @@ function Header(props) {
         <Link to="/">
             <div className="Header-logo"></div>
         </Link>
-      <div className="Header-input">
-        <form onSubmit={props.handleSubmit}>
-        <label>
-          <input 
-            type="text" 
-            id="title" 
-            name="title" 
-            placeholder="Recherche... Avengers, La r.."
-            value={props.value}
-            onChange={props.handleChange}
-          />
-          </label>
-        </form>
-      </div>
+      
     </div>
   );
 }
