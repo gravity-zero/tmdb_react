@@ -11,8 +11,9 @@ function Details(props) {
     //recup id et call API
     const ImgUrl = "https://image.tmdb.org/t/p/original";
 
+    
     useEffect(() => {
-        getMovieById(props.match.params.id)
+        getMovieById(props.match.params.id, props.lang)
         .then(data => {
             setMovie(data)
         })

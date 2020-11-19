@@ -15,6 +15,8 @@ function Header(props) {
         <SearchBar value={props.value} 
           handleChange={props.handleChange}
           setMovies={props.setMovies}
+          changeLang={props.changeLang}
+          lang={props.lang.value}
         />
       </div>
     </div>

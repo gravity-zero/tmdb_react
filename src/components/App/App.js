@@ -18,14 +18,20 @@ function App() {
     results: []
   });
 
+  const [lang, setLang] = useState({
+    value : "fr",
+  })
+
   function handleChange(event) {
     setValue({
       ...value,
       [event.target.name]: event.target.value
       });
     }
-  
-    console.log(value)
+
+  function changeLang(event) {
+    setLang({value:event.target.value})
+  }
 
   return (
     <BrowserRouter>
@@ -33,6 +39,8 @@ function App() {
         handleChange={handleChange}
         value={value.title}
         setMovies={setMovies}
+        changeLang={changeLang}
+        lang={lang.value}
       />
         <Switch>
           <Route
@@ -48,7 +56,7 @@ function App() {
           <Route
             exact
             path="/details/:id"
-            component={Details}
+            render={props=> <Details {...props} lang={lang.value} />}
           />
         </Switch>
         <Footer/>
