@@ -1,79 +1,37 @@
+import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { getMoviesByName } from '../../services/titles/titles';
+
 import './Homepage.scss';
-import Header from '../Header/Header';
-import Card from '../Card/Card';
-import { BrowserRouter} from 'react-router-dom';
 
-function Homepage() {
-  //const filter = "";
-  const [value, setValue] = useState({
-     title: '' 
-    });
+function Homepage(props) {
 
-    const [movies, setMovies] = useState({
-      total_results: '',
-      results: []
-    });
+  const [object, setObject] = useState({
+    total_results: '',
+    results: []
+  });
 
-
-  function handleChange(event) {
-    setValue({
-      ...value,
-      [event.target.name]: event.target.value
-      });
-    }
-
-  function handleSubmit(event) {
-    event.preventDefault();
-    console.log(handleSubmit)
-    getMoviesByName(value.title)
-        .then(data => {
-            setMovies(data)
-        console.log(useEffect)
-        })
+  useEffect(()=>{
+    if(props.movies !== undefined){
+    setObject(props.movies);
   }
-
-console.log(movies)
+  }, 
+  [ props.movies ]
+  )
+  
+  console.log("object", object)
 
 
   return (
-    <BrowserRouter>
-      <div className="Homepage">
-        <Header/> 
-        <div className="Cards">
-          <Card/> 
-          <Card/> 
-          <Card/> 
-          <Card/> 
-        </div>
-
-        <form onSubmit={handleSubmit}>
-          <div className="input">
-            <label>
-              Recherche par Nom de film
-              <input 
-                type="text" 
-                id="title" 
-                name="title" 
-                value={value.title}
-                onChange={handleChange}
-                />
-              <input type="submit" />
-            </label>
-          </div>
-        </form>
-        <div className="Movies">
-          <h1>Total de résultat: {movies.results.length}</h1>
+    <div className="Homepage"> 
+      <div className="Movies_test">
+          <h1>Total de résultat: {object.results.length}</h1>
           <ul>
-            { movies.results.map((movie) =>
-                <li value={movie.id}>{movie.title}</li>
-            )}
+          { object.results.map((movie) =>
+              <li value={movie.id}>{movie.title}</li>
+          )}
           </ul>
-        </div>
       </div>
-    </BrowserRouter>
-
+    </div>
   )
 }
 

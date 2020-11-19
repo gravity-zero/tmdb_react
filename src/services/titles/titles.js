@@ -12,6 +12,9 @@ export function getMoviesByName(name)
         
 }
 
+
+
+
 export function getMovieById(id)
 {
     const api_key = "497f09650e99d4bcfc441563baefcceb";
