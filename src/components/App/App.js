@@ -38,12 +38,11 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Header /> 
-      <Searchbar 
+      <Header 
         handleChange={handleChange}
         handleSubmit={handleSubmit}
         value={value.title}
-      />
+      /> 
         <Switch>
           <Route
             exact
