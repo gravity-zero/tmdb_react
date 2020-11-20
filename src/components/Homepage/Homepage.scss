@@ -3,13 +3,18 @@
 .Header {
   display: flex !important;
   flex-direction: column !important;
+  position: sticky;
+  top: 0;
+  background-color: #2B2929;
+  z-index: 1000;
   & a {
     align-self: baseline;
     height: 50px;
     display: flex;
     align-items: center;
+    width: 100%;
     @include sm {
-      height: 100px;
+      padding: 10px 0;
     }
   }
   &-logo{
@@ -23,7 +28,7 @@
     height: 100px;
 
     @include sm {
-      height: 200px;
+      height: 150px;
     }
     background-color: #1a1919 !important;
     display: flex;
