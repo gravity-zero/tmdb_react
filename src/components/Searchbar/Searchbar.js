@@ -1,5 +1,4 @@
 import './Searchbar.scss';
-import { useEffect } from 'react';
 import { useHistory, useRouteMatch } from 'react-router-dom'
 import { getMoviesByName } from '../../services/titles/titles';
 
@@ -15,7 +14,6 @@ function Searchbar(props) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    console.log(props.value)
     if(props.value != "") {
       getMoviesByName(props.value)
           .then(data => {
@@ -24,10 +22,14 @@ function Searchbar(props) {
                 history.push("/")
               }
           })
+    } else {
+      props.setMovies({
+        total_results: '',
+        results: []
+      })
     }
   }
 
-  console.log(props.value)
   return (
     <div className="Searchbar">
         <form onSubmit={handleSubmit}>
