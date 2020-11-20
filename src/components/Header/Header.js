@@ -1,12 +1,26 @@
 import { Link } from 'react-router-dom';
 import SearchBar from '../Searchbar/Searchbar';
 import './Header.scss';
+import { useState} from 'react';
+
 
 function Header(props) {
 
+  function refresh () {
+    let emptyMovies = ({
+      total_results: '',
+      results: []
+    });
+    let emptyValue = ({
+      title: ''
+    });
+    props.setMovies(emptyMovies);
+    props.setValue(emptyValue)
+  }
+
   return (
     <div className="Header">
-        <Link to="/">
+        <Link to="/" onClick={refresh}>
             <div className="Header-logo"></div>
         </Link>
       <div className="Header-input">

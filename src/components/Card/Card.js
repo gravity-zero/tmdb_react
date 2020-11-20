@@ -14,7 +14,7 @@ function Card(movie) {
         
         <div className="Card-info">
             <span className="Card-year">{movie.movie.release_date}</span>
-            <span className="Card-title">{movie.movie.title}</span>
+            <span className="Card-title">{movie.movie.original_title}</span>
         </div>
       </Link>
     </div>
