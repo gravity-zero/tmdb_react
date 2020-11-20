@@ -14,7 +14,7 @@ function Searchbar(props) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    if(props.value != "") {
+    if(props.value !== "") {
       getMoviesByName(props.value)
           .then(data => {
               props.setMovies(data)

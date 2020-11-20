@@ -7,7 +7,6 @@ import i from '../../assets/noimage.jpg';
 function Details(props) {
 
     const [movie, setMovie] = useState({});
-    const ImgUrl = "https://image.tmdb.org/t/p/original";
 
     
     useEffect(() => {
@@ -15,7 +14,7 @@ function Details(props) {
         .then(data => {
             setMovie(data)
         })
-    },[props.match.params.id])
+    },[props.match.params.id, props.lang])
 
     let img = i;
     if (null !== movie.poster_path) {
