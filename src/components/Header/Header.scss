@@ -10,7 +10,10 @@
     font-size: calc(10px + 2vmin);
     &-logo {
         margin: 10px 40px;
-        width: 400px;
+        width: 350px;
+        @include sm {
+            width: 400px;
+        }
         height: 40px;
         background-image: url(../../assets/LogoRMovie.svg);
         background-size: contain;
