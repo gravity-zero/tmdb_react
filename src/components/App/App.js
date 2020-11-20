@@ -5,7 +5,6 @@ import Movies from '../Movies/Movies';
 import Header from '../Header/Header';
 import Details from '../Details/Details'
 import Footer from '../Footer/Footer';
-import Searchbar from '../Searchbar/Searchbar';
 
 function App() {
 
