@@ -17,19 +17,18 @@
         background-repeat: no-repeat;
     }
     & input {
+        padding: 0 10px;
+        margin: 10px 10px 10px 0;
         &:focus {
-            border: none;
             outline: none;
             border-bottom: 1px solid white;
-            padding: 0 10px;
-            margin: 10px 10px 10px 0;
             & + label {display: none;}
         }
         width: 200px !important;
         font-size: 20px;
         @include sm {
             width: 385px;
-            font-size: 30px;
+            font-size: 25px;
 
         }
         margin: 10px 0;
@@ -43,6 +42,6 @@
     & label {
         margin-right: 10px;
         color: rgb(124, 124, 124);
-        font-size: 30px;
+        font-size: 20px;
     }
   }

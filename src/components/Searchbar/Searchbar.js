@@ -44,10 +44,12 @@ function Searchbar(props) {
         onChange={props.handleChange}
         />
         </label>
+        <label>
         <select onChange={props.changeLang} value={props.lang} className="select-lang">
           <option value="fr" defaultValue>FR</option>
           <option value="en">EN</option>
         </select>
+        </label>
       </div>
       </form>
     </div>
