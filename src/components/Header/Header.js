@@ -4,9 +4,21 @@ import './Header.scss';
 
 function Header(props) {
 
+  function refresh () {
+    let emptyMovies = ({
+      total_results: '',
+      results: []
+    });
+    let emptyValue = ({
+      title: ''
+    });
+    props.setMovies(emptyMovies);
+    props.setValue(emptyValue)
+  }
+
   return (
     <div className="Header">
-        <Link to="/">
+        <Link to="/" onClick={refresh}>
             <div className="Header-logo"></div>
         </Link>
       <div className="Header-input">

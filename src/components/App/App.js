@@ -5,6 +5,7 @@ import Header from '../Header/Header';
 import Details from '../Details/Details'
 import Footer from '../Footer/Footer';
 
+
 function App() {
 
   const [value, setValue] = useState({
@@ -37,6 +38,7 @@ function App() {
         handleChange={handleChange}
         value={value.title}
         setMovies={setMovies}
+        setValue={setValue}
         changeLang={changeLang}
         lang={lang.value}
       />
