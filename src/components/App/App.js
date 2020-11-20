@@ -1,7 +1,6 @@
-import { BrowserRouter, Route, Switch, useHistory } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { useState} from 'react';
 import  Homepage  from '../Homepage/Homepage';
-import Movies from '../Movies/Movies';
 import Header from '../Header/Header';
 import Details from '../Details/Details'
 import Footer from '../Footer/Footer';
@@ -46,11 +45,6 @@ function App() {
             exact
             path="/"
             render={() => <Homepage movies={movies} />}
-          />
-          <Route
-            exact
-            path="/test"
-            component={Movies}
           />
           <Route
             exact
