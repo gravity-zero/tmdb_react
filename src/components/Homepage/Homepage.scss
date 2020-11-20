@@ -1,4 +1,5 @@
-@import '../SCSS/media';
+@import '../../assets/SCSS/media';
+
 .Header {
   display: flex !important;
   flex-direction: column !important;
@@ -12,10 +13,8 @@
     }
   }
   &-logo{
-    width: 30px !important;
     height: 30px !important;
     @include sm {
-      width: 80px !important;
       height: 80px !important;
     }
   }
