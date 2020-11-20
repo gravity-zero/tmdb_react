@@ -39,7 +39,7 @@ function Searchbar(props) {
         type="text" 
         id="title" 
         name="title" 
-        placeholder="Recherche... Avengers, La r.."
+        placeholder="Recherche..."
         value={props.value}
         onChange={props.handleChange}
         />
