@@ -9,9 +9,10 @@
     justify-content: space-between;
     font-size: calc(10px + 2vmin);
     &-logo {
-        margin: 10px 40px;
+        margin: 10px 10px;
         width: 300px;
         @include sm {
+            margin: 10px 40px;
             width: 400px;
         }
         height: 40px;
