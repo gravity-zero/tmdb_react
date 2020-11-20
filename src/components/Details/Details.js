@@ -32,7 +32,6 @@ function Details(props) {
         <div className="col-2 infos">
             <div className="content">
                 <h1>{movie.original_title}</h1>
-                <p><strong>Description :</strong> {movie.overview}</p>
                 <div className="website">
                     <h4>Avis: </h4>
                         <StarRatingComponent 
@@ -41,6 +40,7 @@ function Details(props) {
                         value={rate}
                     />
                 </div>
+                <p><strong>Description :</strong> {movie.overview}</p>
                 <a href={movie.homepage} >
                     <button type="button" className="large-button-website">Voir le site du film <FaRegPlayCircle /></button>
                 </a>
