@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import SearchBar from '../Searchbar/Searchbar';
 import './Header.scss';
-import { useState} from 'react';
 
 
 function Header(props) {
